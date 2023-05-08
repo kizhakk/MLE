@@ -8,7 +8,7 @@ st.title("Bank Customers Churn Prediction")
 
 st.sidebar.header("Input Parameters to predict Bank Customers Churn")
 
-
+st.sidebar.markdown("---")
 st.sidebar.markdown("Made by Josh/Idris/Ramu/Rajshree/Alan")
 
 def user_input_features():
@@ -28,7 +28,7 @@ def user_input_features():
     return features
 
 df = user_input_features()
-
+st.sidebar.markdown("---")
 st.subheader('User Input parameters')
 st.write(df)
 
