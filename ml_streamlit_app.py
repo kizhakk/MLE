@@ -13,10 +13,11 @@ def user_input_features():
     petal_length = st.sidebar.slider('Age', 10, 90, 40, 5)
     petal_width = st.sidebar.checkbox('Has Credit Card', value = False)
     churn_activemember = st.sidebar.checkbox('Is Active Member', value = False)
-    data = {'sepal_length': sepal_length,
-            'sepal_width': sepal_width,
-            'petal_length': petal_length,
-            'petal_width': petal_width}
+    data = {'Credit Score': sepal_length,
+            'Gender': sepal_width,
+            'Age': petal_length,
+            'Has Credit Card': petal_width,
+           'Is Active Member': churn_activemember}
     features = pd.DataFrame(data, index=[0])
     return features
 
