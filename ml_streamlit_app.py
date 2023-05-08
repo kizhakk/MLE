@@ -2,9 +2,10 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
+st.image("jplogo")
 
 st.title("Bank Customers Churn Prediction")
-st.image("jplogo")
+
 st.sidebar.header("Input Parameters to predict Bank Customers Churn")
 
 def user_input_features():
