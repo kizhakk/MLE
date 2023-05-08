@@ -9,7 +9,7 @@ st.title("Bank Customers Churn Prediction")
 st.sidebar.header("Input Parameters to predict Bank Customers Churn")
 
 st.sidebar.markdown("---")
-st.sidebar.markdown("Made by Josh/Idris/Ramu/Rajshree/Alan")
+st.sidebar.header("Settings")
 
 def user_input_features():
     sepal_length = st.sidebar.slider('Credit Score', 300, 900, 600,25)
@@ -31,6 +31,7 @@ df = user_input_features()
 st.sidebar.markdown("---")
 st.subheader('User Input parameters')
 st.write(df)
+st.sidebar.markdown("Made by Josh/Idris/Ramu/Rajshree/Alan")
 
 iris = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')
 X = iris.drop('species', axis=1)
