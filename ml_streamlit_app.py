@@ -8,6 +8,9 @@ st.title("Bank Customers Churn Prediction")
 
 st.sidebar.header("Input Parameters to predict Bank Customers Churn")
 
+
+st.sidebar.markdown("Made by Josh/Idris/Ramu/Rajshree/Alan")
+
 def user_input_features():
     sepal_length = st.sidebar.slider('Credit Score', 300, 900, 600,25)
     sepal_width = st.sidebar.selectbox('Gender', ["Male", "Female"])
