@@ -11,11 +11,13 @@ def user_input_features():
     sepal_length = st.sidebar.slider('Credit Score', 300, 900, 600,25)
     sepal_width = st.sidebar.selectbox('Gender', ["Male", "Female"])
     petal_length = st.sidebar.slider('Age', 10, 90, 40, 5)
+    churn_geography = st.sidebar.selectbox('Geography', ["France", "Spain", "Germany"])
     petal_width = st.sidebar.checkbox('Has Credit Card', value = False)
     churn_activemember = st.sidebar.checkbox('Is Active Member', value = False)
     data = {'Credit Score': sepal_length,
             'Gender': sepal_width,
             'Age': petal_length,
+            'Geography': churn_geography,
             'Has Credit Card': petal_width,
            'Is Active Member': churn_activemember}
     features = pd.DataFrame(data, index=[0])
