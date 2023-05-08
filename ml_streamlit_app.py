@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 
-st.title("Iris Flower Prediction App")
+st.title("Bank Customers Churn Prediction")
 
 st.sidebar.header("User Input Parameters")
 
@@ -33,6 +33,8 @@ clf.fit(X, y)
 
 prediction = clf.predict(df)
 prediction_proba = clf.predict_proba(df)
+
+st.write(prediction)
 
 st.subheader('Class labels and their corresponding index number')
 st.write(iris.species.unique())
