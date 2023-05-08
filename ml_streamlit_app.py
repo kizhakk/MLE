@@ -5,13 +5,14 @@ from sklearn.ensemble import RandomForestClassifier
 
 st.title("Bank Customers Churn Prediction")
 
-st.sidebar.header("User Input Parameters")
+st.sidebar.header("Input Parameters to predict Bank Customers Churn")
 
 def user_input_features():
-    sepal_length = st.sidebar.slider('Sepal length', 4.3, 7.9, 5.4)
-    sepal_width = st.sidebar.slider('Sepal width', 2.0, 4.4, 3.4)
-    petal_length = st.sidebar.slider('Petal length', 1.0, 6.9, 1.3)
-    petal_width = st.sidebar.slider('Petal width', 0.1, 2.5, 0.2)
+    sepal_length = st.sidebar.slider('Credit Score', 300, 900, 600,25)
+    sepal_width = st.sidebar.selectbox('Gender', ["Male", "Female"])
+    petal_length = st.sidebar.slider('Age', 10, 90, 40, 5)
+    petal_width = st.sidebar.checkbox('Has Credit Card', value = False)
+    churn_activemember = st.sidebar.checkbox('Is Active Member', value = False)
     data = {'sepal_length': sepal_length,
             'sepal_width': sepal_width,
             'petal_length': petal_length,
