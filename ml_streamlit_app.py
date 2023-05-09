@@ -47,7 +47,7 @@ churnmodel = pickle.load(open('churnmodel.pkl','rb'))
 try:
     prediction_proba = churnmodel.predict_proba(df)
 except Exception as e:
-        print("{}: {}".format(type(e).__name__, 'Error Encountered"))
+        print("{}: {}".format(type(e).__name__, 'Error Encountered'))
 #prediction = churnmodel.predict(df)
 
 #st.write(prediction)
