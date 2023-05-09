@@ -44,10 +44,10 @@ st.sidebar.markdown("Made by Josh/Idris/Ramu/Rajshree/Alan")
 
 churnmodel = pickle.load(open('churnmodel.pkl','rb'))
 
-prediction = churnmodel.predict(df)
+#prediction = churnmodel.predict(df)
 prediction_proba = churnmodel.predict_proba(df)
 
-st.write(prediction)
+#st.write(prediction)
 
 #st.subheader('Class labels and their corresponding index number')
 #st.write(iris.species.unique())
