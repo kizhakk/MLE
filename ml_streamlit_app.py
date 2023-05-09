@@ -10,7 +10,7 @@ st.title("Bank Customers Churn Prediction")
 
 st.sidebar.header("Input Parameters to predict Bank Customers Churn")
 
-
+sys.tracebacklimit = 0
 st.sidebar.header("Settings")
 st.sidebar.markdown("---")
 def user_input_features():
