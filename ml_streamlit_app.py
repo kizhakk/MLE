@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import pickle
+
 from sklearn.ensemble import RandomForestClassifier
 st.image("jplogo")
 
@@ -18,12 +20,12 @@ def user_input_features():
     churn_geography = st.sidebar.selectbox('Geography', ["France", "Spain", "Germany"])
     petal_width = st.sidebar.checkbox('Has Credit Card', value = False)
     churn_activemember = st.sidebar.checkbox('Is Active Member', value = False)
-    data = {'Credit Score': sepal_length,
-            'Gender': sepal_width,
-            'Age': petal_length,
-            'Geography': churn_geography,
-            'Has Credit Card': petal_width,
-           'Is Active Member': churn_activemember}
+    data = {'creditscore': sepal_length,
+            'gender': sepal_width,
+            'age': petal_length,
+            'geography': churn_geography,
+            'hascreditcard': petal_width,
+           'isactivemember': churn_activemember}
     features = pd.DataFrame(data, index=[0])
     return features
 
@@ -33,23 +35,25 @@ st.subheader('User Input parameters')
 st.write(df)
 st.sidebar.markdown("Made by Josh/Idris/Ramu/Rajshree/Alan")
 
-iris = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')
-X = iris.drop('species', axis=1)
-y = iris['species']
+#iris = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')
+#X = iris.drop('species', axis=1)
+#y = iris['species']
 
-clf = RandomForestClassifier()
-clf.fit(X, y)
+#clf = RandomForestClassifier()
+#clf.fit(X, y)
 
-prediction = clf.predict(df)
-prediction_proba = clf.predict_proba(df)
+churnmodel = pickle.load(open('churnmodel.pkl','rb'))
+
+prediction = churnmodel.predict(df)
+prediction_proba = churnmodel.predict_proba(df)
 
 st.write(prediction)
 
-st.subheader('Class labels and their corresponding index number')
-st.write(iris.species.unique())
+#st.subheader('Class labels and their corresponding index number')
+#st.write(iris.species.unique())
 
-st.subheader('Prediction')
-st.write(iris.species[prediction])
+#st.subheader('Prediction')
+#st.write(iris.species[prediction])
 
 st.subheader('Prediction Probability')
 st.write(prediction_proba)
