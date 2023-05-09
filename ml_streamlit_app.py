@@ -16,8 +16,10 @@ st.sidebar.markdown("---")
 def user_input_features():
     sepal_length = st.sidebar.slider('Credit Score', 300, 900, 600,25)
     sepal_width = st.sidebar.selectbox('Gender', ["Male", "Female"])
+    sepal_width = 1
     petal_length = st.sidebar.slider('Age', 10, 90, 40, 5)
     churn_geography = st.sidebar.selectbox('Geography', ["France", "Spain", "Germany"])
+    churn_geography = 0
     petal_width = st.sidebar.checkbox('Has Credit Card', value = False)
     churn_activemember = st.sidebar.checkbox('Is Active Member', value = False)
     data = {'creditscore': sepal_length,
