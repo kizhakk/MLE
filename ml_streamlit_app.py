@@ -10,7 +10,6 @@ st.title("Bank Customers Churn Prediction")
 
 st.sidebar.header("Input Parameters to predict Bank Customers Churn")
 
-sys.tracebacklimit = 0
 st.sidebar.header("Settings")
 st.sidebar.markdown("---")
 def user_input_features():
@@ -45,9 +44,11 @@ st.sidebar.markdown("Made by Josh/Idris/Ramu/Rajshree/Alan")
 #clf.fit(X, y)
 
 churnmodel = pickle.load(open('churnmodel.pkl','rb'))
-
+try:
+    prediction_proba = churnmodel.predict_proba(df)
+except Exception as e:
+        print("{}: {}".format(type(e).__name__, e))
 #prediction = churnmodel.predict(df)
-prediction_proba = churnmodel.predict_proba(df)
 
 #st.write(prediction)
 
