@@ -43,7 +43,11 @@ st.sidebar.markdown("Made by Josh/Idris/Ramu/Rajshree/Alan")
 #clf = RandomForestClassifier()
 #clf.fit(X, y)
 
-churnmodel = pickle.load(open('churnmodel-lgbm.pkl','rb'))
+dv, churnmodel = pickle.load(open('churnmodel-lgbm.pkl','rb'))
+st.write(churnmodel.features_)
+input_dict = {
+    
+}
 prediction = churnmodel.predict(df)
 
 #st.write(prediction)
