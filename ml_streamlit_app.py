@@ -45,7 +45,7 @@ st.sidebar.markdown("Made by Josh/Idris/Ramu/Rajshree/Alan")
 
 churnmodel = pickle.load(open('churnmodel-lgbm.pkl','rb'))
 try:
-    prediction_proba = churnmodel.predict_proba(df)
+    prediction_proba = churnmodel.predict(df)
 except Exception as e:
         print("{}: {}".format(type(e).__name__, 'Error Encountered'))
 #prediction = churnmodel.predict(df)
