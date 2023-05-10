@@ -44,7 +44,7 @@ st.sidebar.markdown("Made by Josh/Idris/Ramu/Rajshree/Alan")
 #clf.fit(X, y)
 
 churnmodel = pickle.load(open('churnmodel-lgbm.pkl','rb'))
-st.write(churnmodel.features_)
+st.write(churnmodel.n_features_)
 input_dict = {
     
 }
