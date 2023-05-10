@@ -44,11 +44,7 @@ st.sidebar.markdown("Made by Josh/Idris/Ramu/Rajshree/Alan")
 #clf.fit(X, y)
 
 churnmodel = pickle.load(open('churnmodel-lgbm.pkl','rb'))
-try:
-    prediction = churnmodel.predict(df)
-except Exception as e:
-        print("{}: {}".format(type(e).__name__, 'Error Encountered'))
-#prediction = churnmodel.predict(df)
+prediction = churnmodel.predict(df)
 
 #st.write(prediction)
 
