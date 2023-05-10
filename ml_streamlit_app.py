@@ -43,7 +43,7 @@ st.sidebar.markdown("Made by Josh/Idris/Ramu/Rajshree/Alan")
 #clf = RandomForestClassifier()
 #clf.fit(X, y)
 
-churnmodel = pickle.load(open('churnmodel.pkl','rb'))
+churnmodel = pickle.load(open('churnmodel-lgbm.pkl','rb'))
 try:
     prediction_proba = churnmodel.predict_proba(df)
 except Exception as e:
