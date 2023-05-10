@@ -45,7 +45,7 @@ st.sidebar.markdown("Made by Josh/Idris/Ramu/Rajshree/Alan")
 
 churnmodel = pickle.load(open('churnmodel-lgbm.pkl','rb'))
 try:
-    prediction_proba = churnmodel.predict(df)
+    prediction = churnmodel.predict(df)
 except Exception as e:
         print("{}: {}".format(type(e).__name__, 'Error Encountered'))
 #prediction = churnmodel.predict(df)
@@ -59,4 +59,4 @@ except Exception as e:
 #st.write(iris.species[prediction])
 
 st.subheader('Prediction Probability')
-st.write(prediction_proba)
+st.write(prediction)
