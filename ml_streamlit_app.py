@@ -65,8 +65,8 @@ def user_input_features():
         churn_numofproducts_2 = 0
         churn_numofproducts_3 = 0
         churn_numofproducts_4 = 0
-        churn_creditscore = 0.696
-        churn_age = 0.902
+        churn_creditscore = 0.902
+        churn_age = 0.189
         churn_tenure = 0.4
         churn_balance = 0.299
         churn_estimatedsalary = 0.189
