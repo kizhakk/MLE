@@ -111,7 +111,7 @@ input_dict = {
 if st.button('Predict'):
     #Predict
     input_features_float = [float(x) for x in input_features]
-    prediction = churnmodel.predict_proba(np.array([input_features_float]))
+    prediction = churnmodel.predict(np.array([input_features_float]))
     st.subheader('Prediction Probability for Bank Customer Churn is ...')
     st.write(prediction)
 
