@@ -43,7 +43,7 @@ def user_input_features():
     input_features.append(churn_age)
     input_features.append(churn_age)
     df = np.array([input_features])
-    return features
+    return input_features
 
 st.sidebar.markdown("---")
 st.subheader('User Input parameters')
