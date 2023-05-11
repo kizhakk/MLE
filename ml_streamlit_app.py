@@ -63,7 +63,8 @@ df = user_input_features()
 # Add a button to trigger prediction
 if st.button('Predict'):
     #Predict
-    prediction = churnmodel.predict(np.array([input_features]))
+    input_features_float = [float(x) for x in input_features]
+    prediction = churnmodel.predict(np.array([input_features_float]))
     st.subheader('Prediction Probability for Bank Customer Churn is ...')
     st.write(prediction)
 
