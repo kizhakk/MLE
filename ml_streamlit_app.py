@@ -13,13 +13,12 @@ st.sidebar.header("Input Parameters to predict Bank Customers Churn")
 st.sidebar.header("Settings")
 st.sidebar.markdown("---")
 def user_input_features():
-    sepal_length = st.sidebar.slider('Credit Score', 300, 900, 600,25)
-    sepal_width = st.sidebar.selectbox('Gender', ["Male", "Female"])
-    sepal_width = 1
-    petal_length = st.sidebar.slider('Age', 10, 90, 40, 5)
+    churn_creditscore = st.sidebar.slider('Credit Score', 300, 900, 600,25)
+    churn_gender = st.sidebar.selectbox('Gender', ["Male", "Female"])
+    churn_age = st.sidebar.slider('Age', 10, 90, 40, 5)
     churn_geography = st.sidebar.selectbox('Geography', ["France", "Spain", "Germany"])
     churn_geography = 0
-    petal_width = st.sidebar.checkbox('Has Credit Card', value = False)
+    churn_hascreditcard = st.sidebar.checkbox('Has Credit Card', value = False)
     churn_activemember = st.sidebar.checkbox('Is Active Member', value = False)
     data = {'creditscore': sepal_length,
             'gender': sepal_width,
@@ -36,29 +35,14 @@ st.subheader('User Input parameters')
 st.write(df)
 st.sidebar.markdown("Made by Josh/Idris/Ramu/Rajshree/Alan")
 
-#iris = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')
-#X = iris.drop('species', axis=1)
-#y = iris['species']
-
-#clf = RandomForestClassifier()
-#clf.fit(X, y)
-
 churnmodel = pickle.load(open('churnmodel-lgbm.pkl','rb'))
-st.write(churnmodel.n_features_)
 input_dict = {
-    
 }
-
 nparrraymodel = [[ 45,  93,  48,  74,  29,  58,   6,  50,  81,  21,  10, 528, 430,
        220, 494, 493, 320]]
+
+#Predict
 prediction = churnmodel.predict(nparrraymodel)
-#st.write(prediction)
 
-#st.subheader('Class labels and their corresponding index number')
-#st.write(iris.species.unique())
-
-#st.subheader('Prediction')
-#st.write(iris.species[prediction])
-
-st.subheader('Prediction Probability')
+st.subheader('Prediction Probability for Bank Customer Churn is ...')
 st.write(prediction)
