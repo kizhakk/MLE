@@ -48,8 +48,10 @@ st.write(churnmodel.n_features_)
 input_dict = {
     
 }
-prediction = churnmodel.predict(df)
 
+nparrraymodel = [[ 45,  93,  48,  74,  29,  58,   6,  50,  81,  21,  10, 528, 430,
+       220, 494, 493, 320]]
+prediction = churnmodel.predict(nparrraymodel)
 #st.write(prediction)
 
 #st.subheader('Class labels and their corresponding index number')
