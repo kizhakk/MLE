@@ -115,7 +115,7 @@ if st.button('Predict'):
     st.subheader('Prediction Probability for Bank Customer Churn is ...')
     st.write(prediction)
     
-    if predicton > 0.5:
+    if prediction > 0.5:
         st.write("Customer is likely to Churn")
     else:
         st.write("Customer is not likely to Churn")
