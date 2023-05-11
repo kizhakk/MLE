@@ -91,6 +91,7 @@ def user_input_features():
     input_features.append(churn_balansalratio)
  
     df = np.array([input_features])
+    st.table(df)
     return input_features
 
 st.sidebar.markdown("---")
