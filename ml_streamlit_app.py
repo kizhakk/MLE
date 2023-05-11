@@ -17,10 +17,10 @@ input_features = []
 def user_input_features():
     churn_creditscore = st.sidebar.slider('Credit Score', 300, 900, 600,25)
     churn_gender = st.sidebar.selectbox('Gender', ["Male", "Female"])
-    if churn_gender == 'Male'
+    if churn_gender == 'Male':
         churn_gender_male = 1.0
         churn_gender_female = 0
-    else
+    else:
         churn_gender_male = 0
         churn_gender_female = 1.0
     
