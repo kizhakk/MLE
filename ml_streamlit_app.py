@@ -5,7 +5,7 @@ import pickle
 
 from sklearn.ensemble import RandomForestClassifier
 st.image("jplogo")
-
+st.set_page_config(page_title='JPM Chase', page_icon=”🖖”)
 st.title("Bank Customers Churn Prediction")
 
 st.sidebar.header("Input Parameters to predict Bank Customers Churn")
@@ -51,8 +51,6 @@ st.sidebar.markdown("---")
 st.subheader('User Input parameters')
 st.write(df)
 
-st.sidebar.button("Predict")
-
 st.sidebar.markdown("Made by Josh/Idris/Ramu/Rajshree/Alan")
 
 churnmodel = pickle.load(open('churnmodel-lgbm.pkl','rb'))
@@ -61,10 +59,7 @@ input_dict = {
 nparrraymodel = [[ 45,  93,  48,  74,  29,  58,   6,  50,  81,  21,  10, 528, 430,
        220, 494, 493, 320]]
 
-
-
-
-    
+   
 # Add a button to trigger prediction
 if st.button('Predict'):
     #Predict
