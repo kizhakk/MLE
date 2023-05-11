@@ -36,7 +36,7 @@ def user_input_features():
     make_churn_true = st.sidebar.checkbox('Churn True', value = True)
     
     if make_churn_true == True:
-        churn_hascreditcard = 0
+        churn_hascreditcard = 1
         churn_activemember = 0
         churn_geography_france = 0
         churn_geography_germany  = 0
