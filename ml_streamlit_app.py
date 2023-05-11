@@ -4,7 +4,7 @@ import numpy as np
 import pickle
 
 from sklearn.ensemble import RandomForestClassifier
-st.set_page_config(page_title='JPM Chase', page_icon='🖖')
+st.set_page_config(page_title='JPM Chase - Customer Churn Prediction', page_icon='🖖')
 st.image("jplogo")
 
 st.title("Bank Customers Churn Prediction")
@@ -47,7 +47,6 @@ def user_input_features():
     input_features.append(churn_age)
     return features
 
-df = user_input_features()
 st.sidebar.markdown("---")
 st.subheader('User Input parameters')
 st.write(df)
