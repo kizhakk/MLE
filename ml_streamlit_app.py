@@ -59,12 +59,11 @@ input_dict = {
 }
 nparrraymodel = [[ 45,  93,  48,  74,  29,  58,   6,  50,  81,  21,  10, 528, 430,
        220, 494, 493, 320]]
-
-   
+df = user_input_features()
 # Add a button to trigger prediction
 if st.button('Predict'):
     #Predict
-    prediction = churnmodel.predict(np.array([user_input_features()]))
+    prediction = churnmodel.predict(np.array([input_features]))
     st.subheader('Prediction Probability for Bank Customer Churn is ...')
     st.write(prediction)
 
