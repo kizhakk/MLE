@@ -2,8 +2,9 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-
+from sklearn.preprocessing import MinMaxScaler
 from sklearn.ensemble import RandomForestClassifier
+
 st.set_page_config(page_title='JPM Chase - Customer Churn Prediction', page_icon='🖖')
 st.image("jplogo")
 
