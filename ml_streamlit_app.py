@@ -32,32 +32,72 @@ def user_input_features():
     churn_hascreditcard = 1
     churn_activemember = st.sidebar.checkbox('Is Active Member', value = False)
     churn_activemember = 1
-   
+    
+    make_churn_true = st.sidebar.checkbox('Churn True', value = True)
+    
+    if make_churn_true == True:
+        churn_hascreditcard = 1.0
+        churn_activemember = 1.0
+        churn_geography_france = 1.0
+        churn_geography_germany  = 0
+        churn_geography_spain = 0
+        churn_gender_female = 0
+        churn_gender_male = 1
+        churn_numofproducts_1 = 0
+        churn_numofproducts_2 = 1
+        churn_numofproducts_3 = 0
+        churn_numofproducts_4 = 0
+        churn_creditscore = 0.696
+        churn_age = 0.527
+        churn_tenure = 0.6
+        churn_balance = 0.54
+        churn_estimatedsalary = 0.36
+        churn_balansalratio = 0.0001
+    else:
+        churn_hascreditcard = 1.0
+        churn_activemember = 1.0
+        churn_geography_france = 1.0
+        churn_geography_germany  = 0
+        churn_geography_spain = 0
+        churn_gender_female = 1
+        churn_gender_male = 0
+        churn_numofproducts_1 = 1
+        churn_numofproducts_2 = 0
+        churn_numofproducts_3 = 0
+        churn_numofproducts_4 = 0
+        churn_creditscore = 0.696
+        churn_age = 0.902
+        churn_tenure = 0.4
+        churn_balance = 0.299
+        churn_estimatedsalary = 0.189
+        churn_balansalratio = 0.000187
+    
     input_features.append(churn_hascreditcard)
     input_features.append(churn_activemember)
-    input_features.append(churn_age)
-    input_features.append(churn_age)
-    input_features.append(churn_age)
-    input_features.append(churn_age)
+    input_features.append(churn_geography_france)
+    input_features.append(churn_geography_germany)
+    input_features.append(churn_geography_spain)
     input_features.append(churn_gender_female)
     input_features.append(churn_gender_male)
+    input_features.append(churn_numofproducts_1)
+    input_features.append(churn_numofproducts_2)
+    input_features.append(churn_numofproducts_3)
+    input_features.append(churn_numofproducts_4)
+    input_features.append(churn_creditscore)
     input_features.append(churn_age)
-    input_features.append(churn_age)
-    input_features.append(churn_age)
-    input_features.append(churn_age)
-    input_features.append(churn_age)
-    input_features.append(churn_age)
-    input_features.append(churn_age)
-    input_features.append(churn_age)
-    input_features.append(churn_age)
+    input_features.append(churn_tenure)
+    input_features.append(churn_balance)
+    input_features.append(churn_estimatedsalary)
+    input_features.append(churn_balansalratio)
+ 
     df = np.array([input_features])
     return input_features
 
 st.sidebar.markdown("---")
 st.subheader('User Input parameters')
 st.write(np.array([input_features]))
-nparrraymodel = [[ 45,  93,  48,  74,  29,  58,   6,  50,  81,  21,  10, 528, 430,
-       220, 494, 493, 320]]
+#nparrraymodel = [[ 45,  93,  48,  74,  29,  58,   6,  50,  81,  21,  10, 528, 430,
+#      220, 494, 493, 320]]
 df = user_input_features()
 
 st.sidebar.markdown("---")
