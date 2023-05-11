@@ -17,14 +17,13 @@ def user_input_features():
     churn_gender = st.sidebar.selectbox('Gender', ["Male", "Female"])
     churn_age = st.sidebar.slider('Age', 10, 90, 40, 5)
     churn_geography = st.sidebar.selectbox('Geography', ["France", "Spain", "Germany"])
-    churn_geography = 0
     churn_hascreditcard = st.sidebar.checkbox('Has Credit Card', value = False)
     churn_activemember = st.sidebar.checkbox('Is Active Member', value = False)
-    data = {'creditscore': sepal_length,
-            'gender': sepal_width,
-            'age': petal_length,
+    data = {'creditscore': churn_creditscore,
+            'gender': churn_gender,
+            'age': churn_age,
             'geography': churn_geography,
-            'hascreditcard': petal_width,
+            'hascreditcard': churn_hascreditcard,
            'isactivemember': churn_activemember}
     features = pd.DataFrame(data, index=[0])
     return features
