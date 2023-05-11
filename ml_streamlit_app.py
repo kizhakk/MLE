@@ -48,15 +48,17 @@ def user_input_features():
 st.sidebar.markdown("---")
 st.subheader('User Input parameters')
 st.write(np.array([input_features]))
+nparrraymodel = [[ 45,  93,  48,  74,  29,  58,   6,  50,  81,  21,  10, 528, 430,
+       220, 494, 493, 320]]
+df = user_input_features()
 
+st.sidebar.markdown("---")
 st.sidebar.markdown("Made by Josh/Idris/Ramu/Rajshree/Alan")
 
 churnmodel = pickle.load(open('churnmodel-lgbm.pkl','rb'))
 input_dict = {
 }
-nparrraymodel = [[ 45,  93,  48,  74,  29,  58,   6,  50,  81,  21,  10, 528, 430,
-       220, 494, 493, 320]]
-df = user_input_features()
+
 # Add a button to trigger prediction
 if st.button('Predict'):
     #Predict
