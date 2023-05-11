@@ -12,7 +12,7 @@ st.sidebar.header("Input Parameters to predict Bank Customers Churn")
 
 st.sidebar.header("Settings")
 st.sidebar.markdown("---")
-st.sidebar.button("Predict")
+
 def user_input_features():
     churn_creditscore = st.sidebar.slider('Credit Score', 300, 900, 600,25)
     churn_gender = st.sidebar.selectbox('Gender', ["Male", "Female"])
@@ -33,6 +33,9 @@ df = user_input_features()
 st.sidebar.markdown("---")
 st.subheader('User Input parameters')
 st.write(df)
+
+st.sidebar.button("Predict")
+
 st.sidebar.markdown("Made by Josh/Idris/Ramu/Rajshree/Alan")
 
 churnmodel = pickle.load(open('churnmodel-lgbm.pkl','rb'))
@@ -64,7 +67,7 @@ input_features.append(churn_age)
 # Add a button to trigger prediction
 if st.button('Predict'):
     #Predict
-    prediction = churnmodel.predict(np.array([nparrraymodel]))
+    prediction = churnmodel.predict(np.array([input_features]))
     st.subheader('Prediction Probability for Bank Customer Churn is ...')
     st.write(prediction)
 
