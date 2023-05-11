@@ -91,12 +91,12 @@ def user_input_features():
     input_features.append(churn_balansalratio)
  
     df = np.array([input_features])
-    st.table(df)
+   #st.table(df)
     return input_features
 
 st.sidebar.markdown("---")
 st.subheader('User Input parameters')
-st.write(np.array([input_features]))
+#st.write(np.array([input_features]))
 #nparrraymodel = [[ 45,  93,  48,  74,  29,  58,   6,  50,  81,  21,  10, 528, 430,
 #      220, 494, 493, 320]]
 df = user_input_features()
@@ -112,6 +112,7 @@ input_dict = {
 if st.button('Predict'):
     #Predict
     input_features_float = [float(x) for x in input_features]
+     st.table(input_features_float)
     prediction = churnmodel.predict_proba(np.array([input_features_float]))
     st.subheader('Prediction Probability for Bank Customer Churn is ...')
     st.table(prediction)
