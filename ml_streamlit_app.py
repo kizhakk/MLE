@@ -12,7 +12,7 @@ st.title("Bank Customers Churn Prediction")
 st.sidebar.header("Input Parameters to predict Bank Customers Churn")
 
 st.sidebar.header("Settings")
-st.sidebar.markdown("---")
+
 input_features = []
 def user_input_features():
     churn_creditscore = st.sidebar.slider('Credit Score', 300, 900, 600,25)
