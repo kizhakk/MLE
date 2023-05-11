@@ -5,7 +5,7 @@ import pickle
 
 from sklearn.ensemble import RandomForestClassifier
 st.image("jplogo")
-st.set_page_config(page_title='JPM Chase', page_icon=”🖖”)
+st.set_page_config(page_title='JPM Chase', page_icon='🖖')
 st.title("Bank Customers Churn Prediction")
 
 st.sidebar.header("Input Parameters to predict Bank Customers Churn")
