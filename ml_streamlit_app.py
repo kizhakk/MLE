@@ -28,11 +28,12 @@ def user_input_features():
     churn_geography = st.sidebar.selectbox('Geography', ["France", "Spain", "Germany"])
     churn_geography = 1
     churn_hascreditcard = st.sidebar.checkbox('Has Credit Card', value = False)
+    churn_hascreditcard = 1
     churn_activemember = st.sidebar.checkbox('Is Active Member', value = False)
     churn_activemember = 1
    
-    input_features.append(churn_creditscore)
-    input_features.append(churn_gender)
+    input_features.append(churn_hascreditcard)
+    input_features.append(churn_activemember)
     input_features.append(churn_age)
     input_features.append(churn_age)
     input_features.append(churn_age)
