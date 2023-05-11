@@ -36,23 +36,23 @@ def user_input_features():
     make_churn_true = st.sidebar.checkbox('Churn True', value = True)
     
     if make_churn_true == True:
-        churn_hascreditcard = 1.0
-        churn_activemember = 1.0
-        churn_geography_france = 1.0
+        churn_hascreditcard = 0
+        churn_activemember = 0
+        churn_geography_france = 0
         churn_geography_germany  = 0
-        churn_geography_spain = 0
-        churn_gender_female = 0
-        churn_gender_male = 1
+        churn_geography_spain = 1
+        churn_gender_female = 1
+        churn_gender_male = 0
         churn_numofproducts_1 = 0
         churn_numofproducts_2 = 1
         churn_numofproducts_3 = 0
         churn_numofproducts_4 = 0
-        churn_creditscore = 0.696
-        churn_age = 0.527
-        churn_tenure = 0.6
-        churn_balance = 0.54
-        churn_estimatedsalary = 0.36
-        churn_balansalratio = 0.0001
+        churn_creditscore = 0.398
+        churn_age = 0.283
+        churn_tenure = 0.7
+        churn_balance = 0.000
+        churn_estimatedsalary = 0.406
+        churn_balansalratio = 0.0000
     else:
         churn_hascreditcard = 1.0
         churn_activemember = 1.0
