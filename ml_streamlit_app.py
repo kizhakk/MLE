@@ -50,7 +50,7 @@ def user_input_features():
 
 st.sidebar.markdown("---")
 st.subheader('User Input parameters')
-st.write(df)
+st.write(np.array([input_features]))
 
 st.sidebar.markdown("Made by Josh/Idris/Ramu/Rajshree/Alan")
 
