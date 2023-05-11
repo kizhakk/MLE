@@ -12,7 +12,7 @@ st.sidebar.header("Input Parameters to predict Bank Customers Churn")
 
 st.sidebar.header("Settings")
 st.sidebar.markdown("---")
-
+input_features = []
 def user_input_features():
     churn_creditscore = st.sidebar.slider('Credit Score', 300, 900, 600,25)
     churn_gender = st.sidebar.selectbox('Gender', ["Male", "Female"])
@@ -27,6 +27,23 @@ def user_input_features():
             'hascreditcard': churn_hascreditcard,
            'isactivemember': churn_activemember}
     features = pd.DataFrame(data, index=[0])
+    input_features.append(churn_creditscore)
+    input_features.append(churn_gender)
+    input_features.append(churn_age)
+    input_features.append(churn_age)
+    input_features.append(churn_age)
+    input_features.append(churn_age)
+    input_features.append(churn_age)
+    input_features.append(churn_age)
+    input_features.append(churn_age)
+    input_features.append(churn_age)
+    input_features.append(churn_age)
+    input_features.append(churn_age)
+    input_features.append(churn_age)
+    input_features.append(churn_age)
+    input_features.append(churn_age)
+    input_features.append(churn_age)
+    input_features.append(churn_age)
     return features
 
 df = user_input_features()
@@ -45,29 +62,13 @@ nparrraymodel = [[ 45,  93,  48,  74,  29,  58,   6,  50,  81,  21,  10, 528, 43
        220, 494, 493, 320]]
 
 
-input_features = []
-input_features.append(churn_creditscore)
-input_features.append(churn_gender)
-input_features.append(churn_age)
-input_features.append(churn_age)
-input_features.append(churn_age)
-input_features.append(churn_age)
-input_features.append(churn_age)
-input_features.append(churn_age)
-input_features.append(churn_age)
-input_features.append(churn_age)
-input_features.append(churn_age)
-input_features.append(churn_age)
-input_features.append(churn_age)
-input_features.append(churn_age)
-input_features.append(churn_age)
-input_features.append(churn_age)
-input_features.append(churn_age)
+
+
     
 # Add a button to trigger prediction
 if st.button('Predict'):
     #Predict
-    prediction = churnmodel.predict(np.array([input_features]))
+    prediction = churnmodel.predict(np.array([user_input_features()]))
     st.subheader('Prediction Probability for Bank Customer Churn is ...')
     st.write(prediction)
 
