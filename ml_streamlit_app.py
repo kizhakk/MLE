@@ -17,7 +17,13 @@ input_features = []
 def user_input_features():
     churn_creditscore = st.sidebar.slider('Credit Score', 300, 900, 600,25)
     churn_gender = st.sidebar.selectbox('Gender', ["Male", "Female"])
-    churn_gender = 1
+    if churn_gender == 'Male'
+        churn_gender_male = 1.0
+        churn_gender_female = 0
+    else
+        churn_gender_male = 0
+        churn_gender_female = 1.0
+    
     churn_age = st.sidebar.slider('Age', 10, 90, 40, 5)
     churn_geography = st.sidebar.selectbox('Geography', ["France", "Spain", "Germany"])
     churn_geography = 1
@@ -31,8 +37,8 @@ def user_input_features():
     input_features.append(churn_age)
     input_features.append(churn_age)
     input_features.append(churn_age)
-    input_features.append(churn_age)
-    input_features.append(churn_age)
+    input_features.append(churn_gender_female)
+    input_features.append(churn_gender_male)
     input_features.append(churn_age)
     input_features.append(churn_age)
     input_features.append(churn_age)
