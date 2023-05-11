@@ -113,11 +113,11 @@ if st.button('Predict'):
     input_features_float = [float(x) for x in input_features]
     prediction = churnmodel.predict_proba(np.array([input_features_float]))
     st.subheader('Prediction Probability for Bank Customer Churn is ...')
-    st.write(prediction)
+    st.table(prediction)
     
-    if prediction > 0.5:
-        st.write("Customer is likely to Churn")
-    else:
-        st.write("Customer is not likely to Churn")
+    #if prediction > 0.5:
+     #   st.write("Customer is likely to Churn")
+    #else:
+     #   st.write("Customer is not likely to Churn")
         
 
