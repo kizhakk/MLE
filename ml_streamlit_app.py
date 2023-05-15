@@ -88,6 +88,15 @@ def user_input_features():
  
     df = np.array([input_features])
    #st.table(df)
+
+    st.write("Credit Score ",churn_credit_score)
+    st.write("Gender ",churn_gender)
+    st.write("Age ",churn_age)
+    st.write("Geography ",churn_geography)
+    st.write("Has Credit Card ",churn_hascreditcard)
+    st.write("Is Active Member ",churn_activemember)
+    
+
     return input_features
 
 st.sidebar.markdown("---")
@@ -110,12 +119,6 @@ if st.button('Predict'):
     input_features_float = [float(x) for x in input_features]
     #st.table(input_features_float)
     
-    st.write("Credit Score ",churn_credit_score)
-    st.write("Gender ",churn_gender)
-    st.write("Age ",churn_age)
-    st.write("Geography ",churn_geography)
-    st.write("Has Credit Card ",churn_hascreditcard)
-    st.write("Is Active Member ",churn_activemember)
     
     
     
