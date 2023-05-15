@@ -110,7 +110,7 @@ if st.button('Predict'):
     input_features_float = [float(x) for x in input_features]
     #st.table(input_features_float)
     
-    st.write("Credit Score ",churn_credit)
+    st.write("Credit Score ",churn_credit_score)
     st.write("Gender ",churn_gender)
     st.write("Age ",churn_age)
     st.write("Geography ",churn_geography)
