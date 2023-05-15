@@ -108,7 +108,18 @@ input_dict = {
 if st.button('Predict'):
     #Predict
     input_features_float = [float(x) for x in input_features]
-    st.table(input_features_float)
+    #st.table(input_features_float)
+    
+    st.write("Credit Score ",churn_credit)
+    st.write("Gender ",churn_gender)
+    st.write("Age ",churn_age)
+    st.write("Geography ",churn_geography)
+    st.write("Has Credit Card ",churn_hascreditcard)
+    st.write("Is Active Member ",churn_activemember)
+    
+    
+    
+    
     prediction = churnmodel.predict_proba(np.array([input_features_float]))
     st.subheader('Prediction Probability for Bank Customer Churn is ...')
     st.table(prediction)
