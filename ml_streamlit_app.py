@@ -89,7 +89,7 @@ def user_input_features():
     df = np.array([input_features])
    #st.table(df)
 
-    st.write("Credit Score ",churn_credit_score)
+    st.write("Credit Score ",churn_creditscore)
     st.write("Gender ",churn_gender)
     st.write("Age ",churn_age)
     st.write("Geography ",churn_geography)
