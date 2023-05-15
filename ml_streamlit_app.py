@@ -7,7 +7,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 st.set_page_config(page_title='JPM Chase - Customer Churn Prediction', page_icon='🖖')
 st.image("jplogo")
-
+st.sidebar.image("jplogo")
 st.title("Bank Customers Churn Prediction")
 
 st.sidebar.header("Input Parameters to predict Bank Customers Churn")
