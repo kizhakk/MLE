@@ -27,15 +27,11 @@ def user_input_features():
     
     churn_age = st.sidebar.slider('Age', 10, 90, 40, 5)
     churn_geography = st.sidebar.selectbox('Geography', ["France", "Spain", "Germany"])
-    churn_geography = 1
     churn_hascreditcard = st.sidebar.checkbox('Has Credit Card', value = False)
-    churn_hascreditcard = 1
     churn_activemember = st.sidebar.checkbox('Is Active Member', value = False)
-    churn_activemember = 1
+           
     
-    make_churn_true = st.sidebar.checkbox('Churn True', value = True)
-    
-    if make_churn_true == True:
+    if churn_activemember == True:
         churn_hascreditcard = 1
         churn_activemember = 0
         churn_geography_france = 0
