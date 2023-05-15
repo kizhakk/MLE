@@ -18,19 +18,27 @@ input_features = []
 def user_input_features():
     churn_creditscore = st.sidebar.slider('Credit Score', 300, 900, 600,25)
     churn_gender = st.sidebar.selectbox('Gender', ["Male", "Female"])
+    
+    churn_age = st.sidebar.slider('Age', 10, 90, 40, 5)
+    churn_geography = st.sidebar.selectbox('Geography', ["France", "Spain", "Germany"])
+    churn_hascreditcard = st.sidebar.checkbox('Has Credit Card', value = False)
+    churn_activemember = st.sidebar.checkbox('Is Active Member', value = False)
+    
+    #Print Input Parameters
+    st.write("Credit Score: ",churn_creditscore)
+    st.write("Gender: ",churn_gender)
+    st.write("Age: ",churn_age)
+    st.write("Geography: ",churn_geography)
+    st.write("Has Credit Card: ",churn_hascreditcard)
+    st.write("Is Active Member: ",churn_activemember)      
+    
     if churn_gender == 'Male':
         churn_gender_male = 1.0
         churn_gender_female = 0
     else:
         churn_gender_male = 0
         churn_gender_female = 1.0
-    
-    churn_age = st.sidebar.slider('Age', 10, 90, 40, 5)
-    churn_geography = st.sidebar.selectbox('Geography', ["France", "Spain", "Germany"])
-    churn_hascreditcard = st.sidebar.checkbox('Has Credit Card', value = False)
-    churn_activemember = st.sidebar.checkbox('Is Active Member', value = False)
-           
-    
+
     if churn_activemember == True:
         churn_hascreditcard = 1
         churn_activemember = 0
@@ -89,12 +97,7 @@ def user_input_features():
     df = np.array([input_features])
    #st.table(df)
 
-    st.write("Credit Score ",churn_creditscore)
-    st.write("Gender ",churn_gender)
-    st.write("Age ",churn_age)
-    st.write("Geography ",churn_geography)
-    st.write("Has Credit Card ",churn_hascreditcard)
-    st.write("Is Active Member ",churn_activemember)
+    
     
 
     return input_features
